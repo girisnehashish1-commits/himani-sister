@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himani's Little World ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ffe1ef,#e9d5ff,#fff0f5);
+color:#963c76;
+text-align:center;
+overflow-x:hidden;
+}
+
+header{padding:65px 15px 35px}
+
+h1{
+font-size:42px;
+color:#d63384;
+margin:15px;
+}
+
+.teddy{
+font-size:95px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+50%{transform:translateY(-15px)}
+}
+
+.card{
+background:#ffffffc9;
+max-width:650px;
+width:90%;
+margin:25px auto;
+padding:30px 20px;
+border-radius:25px;
+box-shadow:0 8px 25px #bb75a555;
+}
+
+h2{color:#d63384;margin-bottom:18px}
+
+p{line-height:1.9;font-size:17px}
+
+button{
+background:#e754a3;
+border:0;
+color:white;
+padding:13px 25px;
+border-radius:30px;
+font-size:16px;
+margin:15px;
+cursor:pointer;
+}
+
+button:hover{transform:scale(1.07)}
+
+#surprise{
+display:none;
+font-size:20px;
+line-height:2;
+margin-top:20px;
+}
+
+#music{
+width:100%;
+max-width:300px;
+margin:15px;
+}
+
+.flower{
+position:fixed;
+top:-40px;
+animation:fall 8s linear infinite;
+pointer-events:none;
+z-index:-1;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh) rotate(360deg)}
+}
+
+footer{padding:35px}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="teddy">🧸</div>
+<h1>Hey Himani! 💗</h1>
+<p>Welcome to your magical little world 🦋</p>
+<p>Made with love by your Big Brother ❤️</p>
+</header>
+
+<div class="card">
+<h2>🌸 My Little Princess</h2>
+<div style="font-size:65px">🧸💝🌷</div>
+<p>
+Dear Himani,<br><br>
+You are my sweetest little sister.
+We may fight, tease and argue,
+but you will always be special to me.<br><br>
+I might not say it every day,
+but I love you so much.<br><br>
+Your big brother will always stand
+beside you. ❤️
+</p>
+</div>
+
+<div class="card">
+<h2>🎵 A Song For You</h2>
+<p>A little music for my little princess.</p>
+
+<audio id="music" controls loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<p style="font-size:12px">
+Upload a song named song.mp3 in GitHub.
+</p>
+</div>
+
+<div class="card">
+<h2>🎁 Your Special Surprise</h2>
+<div style="font-size:65px">🎀🎁💗</div>
+
+<p>Himani, open your special gift!</p>
+
+<button onclick="gift()">Open Surprise 💝</button>
+
+<div id="surprise">
+🌷 You are my forever little princess! 🌷
+<br>
+Never stop smiling.
+<br>
+Never stop dreaming.
+<br>
+I will always be there for you.
+<br><br>
+Love you, Himani! 🫂
+<br>
+Your Big Brother ❤️
+</div>
+</div>
+
+<div class="card">
+<h2>🦋 Our Special Bond</h2>
+<div style="font-size:65px">👦🏻 💗 👧🏻</div>
+<p>
+Not just brother and sister,
+but partners in unlimited memories,
+fun and little fights! 😄
+<br><br>
+Forever and always! ❤️
+</p>
+</div>
+
+<footer>
+Made with ❤️ by Your Big Brother
+<br>
+For Himani 👑
+</footer>
+
+<script>
+function gift(){
+document.getElementById("surprise").style.display="block";
+}
+
+const emojis=["💗","🌸","🦋","✨","💕","🌷"];
+
+setInterval(()=>{
+let el=document.createElement("div");
+el.className="flower";
+el.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+el.style.left=Math.random()*100+"vw";
+el.style.fontSize=(18+Math.random()*20)+"px";
+el.style.animationDuration=(5+Math.random()*5)+"s";
+document.body.appendChild(el);
+setTimeout(()=>el.remove(),10000);
+},450);
+</script>
+
+</body>
+</html>
